@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup, FormsModule, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-project-calculator',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectCalculatorComponent implements OnInit {
 
-  constructor() { }
+  projectCalculatorForm: FormGroup;
+
+  constructor(private  fb: FormBuilder) {
+    this.projectCalculatorForm = this.fb.group({
+        property: ['Studio', [Validators.required]],
+        project:  ['Basic', [Validators.required]],
+        bedrooms: ['0', [Validators.required]],
+        bathrooms: ['0', [Validators.required]],
+        area: ['0', [Validators.required]]
+    });
+  }
 
   ngOnInit(): void {
   }
+
+  calculate() {}
+
 
 }

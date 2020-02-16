@@ -2,21 +2,22 @@
   <img src="/assets/img/lock.jpg">
   <div class="logo-form">Login</div>
   <div class="login-form">
-    <form>
+    <form [formGroup]="loginForm">
       <div class="form-field">
         <label class="user" for="login-username"><span class="hidden">Username</span></label>
-        <input id="login-username" type="text" class="form-input" placeholder="Username" required>
+        <input formControlName="username" id="login-username" type="text" class="form-input" placeholder="Username" required>
       </div>
-
+      <p class="error-message" *ngIf="loginForm.get('username').invalid && loginForm.get('username').touched">Please enter valid username!</p>
       <div class="form-field">
         <label class="lock" for="login-password"><span class="hidden">Password</span></label>
-        <input id="login-password" type="password" class="form-input" placeholder="Password" required>
+        <input formControlName="password" id="login-password" type="password" class="form-input" placeholder="Password" required minlength="6">
       </div>
+      <p class="error-message" *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">Please enter valid password!</p>
       <div class="form-field">
-        <label class="checkbox-password-remember">Remember password
+    <!--    <label class="checkbox-password-remember">Remember password
           <input type="checkbox" checked="checked">
           <span class="checkmark"></span>
-        </label>
+        </label>-->
       </div>
       <button class="button">
         Login

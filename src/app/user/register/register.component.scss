@@ -1,14 +1,14 @@
 @import 'src/assets/scss/responsive';
 
 .register {
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .register-form {
-  width: 80%;
+  width: 80vw;
   height: auto;
   border: 0.2em solid var(--text-primary-color);
   display: flex;
@@ -16,6 +16,33 @@
   align-items: center;
   padding: 0.5em;
   margin: 1.4em 0.5em;
+}
+
+.register-form input {
+  font-style: italic;
+  color: var(--golden-text);
+  padding: 0.2em;
+}
+
+.register-form button {
+  margin: 2em auto;
+}
+
+div .form-field:last-child {
+  margin-bottom: 2em;
+}
+
+
+.register-form select {
+  color: var(--text-headings-color);
+}
+
+input.register-form.touched {
+  border: 2em solid var(--golden-text);
+}
+
+.register-form label {
+  padding-right: 2em;
 }
 
 .logo-form {

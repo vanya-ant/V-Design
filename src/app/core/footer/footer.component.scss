@@ -1,6 +1,6 @@
 @import '../../../assets/scss/responsive';
 
-.site-title,footer a {
+.site-title {
   text-decoration:none;
 }
 
@@ -27,4 +27,5 @@ footer {
 footer a {
   color:inherit;
   padding-right:1em;
+  text-decoration:none;
 }
