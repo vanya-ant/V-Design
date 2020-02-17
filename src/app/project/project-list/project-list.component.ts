@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {ProjectService} from '../project.service';
+import {IProject} from '../../shared/project';
 
 @Component({
   selector: 'app-project-list',
@@ -9,6 +10,8 @@ import {ProjectService} from '../project.service';
 
 export class ProjectListComponent implements OnInit {
 
+  selectedProject: IProject;
+
   get projects() { return this.projectService.projects; }
 
   constructor(private projectService: ProjectService) { }
@@ -17,5 +20,7 @@ export class ProjectListComponent implements OnInit {
     this.projectService.loadProjects();
   }
 
-  details() {}
+  selectProjectHandler(project: IProject) {
+    this.selectedProject = project;
+  }
 }

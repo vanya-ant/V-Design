@@ -30,10 +30,12 @@
   font-style: italic;
   color: var(--golden-text);
   padding: 0.2em;
+  border: 2px solid var(--golden-text);
+  background-color:var(--text-primary-color);
 }
 
-input.touched {
-  border: 2em solid var(--golden-text);
+input.login-form.touched {
+  border-color: var(--header-and-footer-color);
 }
 
 .logo-form {

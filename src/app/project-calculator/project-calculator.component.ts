@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, Validators} from '@angular/forms';
+import {ProjectCalculatorService} from './project-calculator.service';
 
 @Component({
   selector: 'app-project-calculator',
@@ -9,21 +10,27 @@ import {FormBuilder, FormGroup, FormsModule, Validators} from '@angular/forms';
 export class ProjectCalculatorComponent implements OnInit {
 
   projectCalculatorForm: FormGroup;
+  formData: any;
+  result: number;
 
-  constructor(private  fb: FormBuilder) {
+  constructor(private  fb: FormBuilder, private projectCalculatorService: ProjectCalculatorService) {
     this.projectCalculatorForm = this.fb.group({
         property: ['Studio', [Validators.required]],
         project:  ['Basic', [Validators.required]],
-        bedrooms: ['0', [Validators.required]],
-        bathrooms: ['0', [Validators.required]],
-        area: ['0', [Validators.required]]
+        bedrooms: ['0', [Validators.required, Validators.min(1)]],
+        bathrooms: ['0', [Validators.required, Validators.min(1)]],
+        area: ['0', [Validators.required, Validators.min(1)]],
+        expenses: ['Expenses', !Validators],
     });
   }
 
   ngOnInit(): void {
   }
 
-  calculate() {}
-
-
+  calculate() {
+    this.result = this.projectCalculatorService.calculate(this.formData);
+    // tslint:disable-next-line:no-unused-expression
+    this.projectCalculatorForm.controls.expenses.enabled;
+    this.projectCalculatorForm.controls.expenses.patchValue(Math.round(this.result), {emitEvent: false});
+  }
 }

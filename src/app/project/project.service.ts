@@ -7,7 +7,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 })
 export class ProjectService {
   projects: IProject[];
-  project: IProject;
+  selectedProject: IProject;
 
   constructor(private http: HttpClient) {}
 
@@ -15,5 +15,9 @@ export class ProjectService {
     this.http.get<IProject[]>('http://localhost:3000/projects').subscribe(projects => {
       this.projects = projects;
     });
+  }
+
+  selectProject(id: string) {
+    this.selectedProject = this.projects.find(project => project._id === id) as IProject;
   }
 }

@@ -1,8 +1,8 @@
 <div class="projects-portfolio">
   <ul class="project-box">
-    <div *ngFor="let project of projects">
+    <div *ngFor="let project of projects" (click)="selectProjectHandler($event)">
       <li class="project-content">
-        <a href="#">
+        <a routerLink="/detail/{{ project._id }}">
           <h1>{{ project.title }}</h1>
           <p>{{ project.year }}</p>
           <p>{{ project.description}}</p>

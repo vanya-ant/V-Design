@@ -20,8 +20,18 @@
 
 .register-form input {
   font-style: italic;
-  color: var(--golden-text);
+  color: var(--golden-text); border: 2px solid var(--golden-text);
+  background-color:var(--text-primary-color);
   padding: 0.2em;
+}
+
+.register-form select {
+  color: var(--golden-text); border: 2px solid var(--golden-text);
+  background-color:var(--text-primary-color);
+}
+
+input.register-form.touched {
+  border-color: var(--header-and-footer-color);
 }
 
 .register-form button {

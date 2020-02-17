@@ -1,7 +1,7 @@
 @import '../../../assets/scss/responsive';
 
 .projects-portfolio {
-  width: 100%;
+  width: calc(100% - 1em);
   height: 100%;
   column-count: 3;
   margin: 0.5em;
@@ -51,6 +51,7 @@
 .project-content img{
   width: 100%;
   height: auto;
+  border-radius: 0.2em;
 }
 
 .project-content a > p {
