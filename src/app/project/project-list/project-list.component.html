@@ -1,14 +1,14 @@
 <div class="projects-portfolio">
-  <ul>
-<!--    <div *ngFor="let project of projects">
-      <li>
+  <ul class="project-box">
+    <div *ngFor="let project of projects">
+      <li class="project-content">
         <a href="#">
           <h1>{{ project.title }}</h1>
           <p>{{ project.year }}</p>
           <p>{{ project.description}}</p>
         </a>
-        <img src="{{project.imageUrl}}" class="gallery-img" onclick="window.open('{{project.imageUrl}}');" />
+        <img src="{{project.imageUrl}}" class="gallery-img" onclick="details()" />
       </li>
-    </div>-->
+    </div>
   </ul>
 </div>

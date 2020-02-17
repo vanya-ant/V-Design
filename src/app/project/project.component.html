@@ -1,7 +1,8 @@
 <div class="gallery">
-<!--  <div *ngFor="let project of projects">
-    <figure class="gallery-item-project.title">
-      <img src="project.imageUrl" class="gallery-img" onclick="window.open('{{project.imageUrl}}');" />
+  <div *ngFor="let project of projects">
+    <figure class="gallery-item-{{project.title}}">
+      <img src="{{project.imageUrl}}" class="gallery-img" />
     </figure>
-  </div>-->
+  </div>
 </div>
+

@@ -14,6 +14,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import {KinveyModule} from 'kinvey-angular-sdk';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PasswordsMatchDirective } from './shared/passwords-match.directive';
+import { VerifyKinveyComponent } from './verify-kinvey/verify-kinvey.component';
+import {ProjectService} from './project/project.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,7 @@ import { PasswordsMatchDirective } from './shared/passwords-match.directive';
     HomeComponent,
     NotFoundComponent,
     PasswordsMatchDirective,
+    VerifyKinveyComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,14 +36,13 @@ import { PasswordsMatchDirective } from './shared/passwords-match.directive';
     ContactsModule,
     AppRoutingModule,
     RouterModule,
-    KinveyModule.init({
-      imports: [KinveyModule.init({
-        appKey: 'kid_Syp7vthf8',
-        appSecret: 'fd05e956918441ab91a881c4475973a1'
-      })]
-    }),
+/*    KinveyModule.init({
+        appKey: 'kid_SkcXBlwQ8',
+        appSecret: '0bfab2722e3548dca29aad19cd11f4aa'
+    }),*/
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   exports: [],

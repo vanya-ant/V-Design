@@ -1,8 +1,7 @@
-export interface Project {
+export interface IProject {
   title: string;
-  customerId: string;
-  designerId: string;
+  author: string;
   description: string;
   year: string;
-  files: [];
+  imageUrl: string;
 }

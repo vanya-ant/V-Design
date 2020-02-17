@@ -8,8 +8,9 @@ import {AuthGuard} from './auth.guard';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {ContactsComponent} from './contacts/contacts.component';
 import {ProjectCalculatorComponent} from './project-calculator/project-calculator.component';
-import {ProjectListComponent} from './project-list/project-list.component';
+import {ProjectListComponent} from './project/project-list/project-list.component';
 import {AboutComponent} from './about/about.component';
+import {ProjectComponent} from './project/project.component';
 
 
 const routes: Routes = [
@@ -51,8 +52,16 @@ const routes: Routes = [
     }
   },
   {
-    path: 'projects',
+    path: 'projects-portfolio',
     component: ProjectListComponent,
+    canActivate: [AuthGuard],
+    data: {
+      isLogged: false
+    }
+  },
+  {
+    path: 'portfolio',
+    component: ProjectComponent,
     canActivate: [AuthGuard],
     data: {
       isLogged: false
