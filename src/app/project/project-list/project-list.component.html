@@ -1,13 +1,13 @@
 <div class="projects-portfolio">
   <ul class="project-box">
-    <div *ngFor="let project of projects" (click)="selectProjectHandler($event)">
+    <div *ngFor="let project of projects" [routerLink]="project._id">
       <li class="project-content">
-        <a routerLink="/detail/{{ project._id }}">
+        <a routerLink="{{ project._id }}">
           <h1>{{ project.title }}</h1>
           <p>{{ project.year }}</p>
           <p>{{ project.description}}</p>
         </a>
-        <img src="{{project.imageUrl}}" class="gallery-img" onclick="details()" />
+        <img src="{{project.imageUrl}}" class="gallery-img"/>
       </li>
     </div>
   </ul>

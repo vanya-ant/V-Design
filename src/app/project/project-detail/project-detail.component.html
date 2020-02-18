@@ -1,10 +1,10 @@
-<div *ngIf="selectedProject">
+<div *ngIf="project">
   <div class="project-detail">
     <div>
-      <h1>{{ selectedProject.title }}</h1>
-      <p>{{ selectedProject.year }}</p>
-      <p>{{ selectedProject.description}}</p>
+      <h1>{{ project.title }}</h1>
+      <p>{{ project.year }}</p>
+      <p>{{ project.description }}</p>
     </div>
-    <img src="{{selectedProject.imageUrl}}" class="gallery-img" />
+    <img src="{{ project.imageUrl }}" class="gallery-img" />
   </div>
 </div>

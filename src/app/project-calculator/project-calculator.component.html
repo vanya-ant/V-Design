@@ -40,7 +40,7 @@
       </div>
     </div>
   </form>
-  <button class="button"  [disabled]="projectCalculatorForm.invalid">
+  <button class="button"  [disabled]="projectCalculatorForm.invalid" (click)="calculate()">
     Calculate
     <div class="button__horizontal"></div>
     <div class="button__vertical"></div>

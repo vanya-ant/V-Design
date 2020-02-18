@@ -7,7 +7,7 @@ import {ProjectListComponent} from '../project-list/project-list.component';
 
 const routes: Routes = [
   {
-    path: 'project',
+    path: 'projects-portfolio',
     children: [
       {
         path: '',
@@ -23,7 +23,7 @@ const routes: Routes = [
         }
       },
       {
-        path: 'detail/:id',
+        path: ':id',
         component: ProjectDetailComponent,
         canActivate: [AuthGuard],
         data: {

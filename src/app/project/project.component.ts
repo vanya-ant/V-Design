@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ProjectService} from './project.service';
 import {IProject} from '../shared/project';
-import {truncate} from 'fs';
 
 
 @Component({
@@ -17,9 +16,5 @@ export class ProjectComponent implements OnInit {
 
   ngOnInit() {
     this.projectService.loadProjects();
-  }
-
-  selectProjectHandler(id: string) {
-    this.projectService.selectProject(id);
   }
 }

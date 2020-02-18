@@ -10,7 +10,7 @@ import {IProject} from '../../shared/project';
 
 export class ProjectListComponent implements OnInit {
 
-  selectedProject: IProject;
+  project: IProject;
 
   get projects() { return this.projectService.projects; }
 
@@ -18,9 +18,5 @@ export class ProjectListComponent implements OnInit {
 
   ngOnInit() {
     this.projectService.loadProjects();
-  }
-
-  selectProjectHandler(project: IProject) {
-    this.selectedProject = project;
   }
 }
