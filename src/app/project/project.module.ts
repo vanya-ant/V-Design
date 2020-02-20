@@ -11,7 +11,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
-  declarations: [ ProjectComponent, ProjectDetailComponent, ProjectListComponent, ProjectCreateComponent ],
+  declarations: [ProjectComponent, ProjectDetailComponent, ProjectListComponent, ProjectCreateComponent],
   imports: [
     CommonModule,
     ProjectRoutingModule,

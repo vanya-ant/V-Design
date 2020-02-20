@@ -5,4 +5,5 @@ export interface IProject {
   description: string;
   year: string;
   imageUrl: string;
+  rating: number;
 }

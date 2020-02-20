@@ -2,7 +2,8 @@
 
 .home-page {
   display: flex;
-  justify-content:center;
+  justify-content: center;
+  height: 100%;
 
   @include bp (phone) {
     display:block;
@@ -128,12 +129,6 @@
 
 .project-calculator-button {
   margin-top: 2em;
-}
-
-.cover-image img {
-  height:100%;
-  width:100%;
-  object-fit:cover;
 }
 
 .cover-image {
