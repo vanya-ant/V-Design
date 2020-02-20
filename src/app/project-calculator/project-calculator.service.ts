@@ -16,18 +16,18 @@ export class ProjectCalculatorService {
      const  RetailProperty = 3;
 
      switch (formData.property) {
-      case 'Apartment': this.result = this.CalculatePropertyArea(formData) *
+      case 'Apartment': this.result = this.calculatePropertyArea(formData) *
         (formData.bathrooms + this.formData.bedrooms);
                         break;
-       case 'Studio': this.result = this.CalculatePropertyArea(formData);
+       case 'Studio': this.result = this.calculatePropertyArea(formData);
                       break;
-       case 'Office': this.result = this.CalculatePropertyArea(formData) *
+       case 'Office': this.result = this.calculatePropertyArea(formData) *
          (formData.bathrooms + this.formData.bedrooms) * Office;
                       break;
-       case 'House': this.result = this.CalculatePropertyArea(formData) *
+       case 'House': this.result = this.calculatePropertyArea(formData) *
          (formData.bathrooms + this.formData.bedrooms) * House;
                      break;
-       case 'RetailProperty': this.result = this.CalculatePropertyArea(formData) *
+       case 'RetailProperty': this.result = this.calculatePropertyArea(formData) *
          (formData.bathrooms + this.formData.bedrooms) * RetailProperty;
                               break;
     }
@@ -35,7 +35,7 @@ export class ProjectCalculatorService {
      return this.result;
   }
 
-  CalculatePropertyArea(formData) {
+  calculatePropertyArea(formData) {
      const  BaseProjectRate = 4.88;
      const  FullProjectRate = 8.34;
      const  ConsultationRate = 3.15;

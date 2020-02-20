@@ -36,13 +36,15 @@
     <div class="form-group">
       <label>Approximate Project Design Expenses</label>
       <div class="form-control" style="padding-left: 2em;">
-        <input formControlName="expenses" type="text" readonly/>
+        <input formControlName="expenses" type="number" [value]="calculate()">
       </div>
     </div>
   </form>
-  <button class="button"  [disabled]="projectCalculatorForm.invalid" (click)="calculate()">
+  <button class="button" type="submit"  [disabled]="projectCalculatorForm.invalid" >
     Calculate
     <div class="button__horizontal"></div>
     <div class="button__vertical"></div>
   </button>
 </div>
+{{ projectCalculatorForm.value | json }}
+{{ calculate() | json }}
