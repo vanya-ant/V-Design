@@ -51,7 +51,20 @@
 .project-content img{
   width: 100%;
   height: auto;
+  overflow: hidden;
+  object-fit:cover;
+  opacity: 0.8;
+  transition: all .2s ease-in-out;
+  background-color: var(--text-primary-color);
+  box-shadow:0 0 0.2em 0.2em rgba(0,0,0,0.42);
   border-radius: 0.2em;
+
+  &:hover {
+    transform: scale(1.05);
+    opacity: 1;
+    position: relative;
+    z-index:1;
+  }
 }
 
 .project-content a > p {
@@ -63,3 +76,4 @@
   border-bottom: 0.1em solid var(--golden-text);
   text-shadow: 0 0 0.2em var(--text-primary-color);
 }
+

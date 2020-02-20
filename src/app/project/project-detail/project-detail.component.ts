@@ -20,8 +20,7 @@ export class ProjectDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.forEach((params: Params) => {
-      const id = params._id;
-      this.project = this.projectService.getProject(id);
+      this.project = this.projectService.getProject(params.id);
     });
   }
 }
