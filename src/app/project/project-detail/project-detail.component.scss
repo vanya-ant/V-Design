@@ -8,15 +8,11 @@
   box-shadow: 3px 3px 8px 0 rgba(0,0,0,0.3);
   padding: 0.5em;
   display: table;
+  color: var(--text-headings-color);
 }
 
 .project-detail:nth-child(1) {
   margin-top: 0;
-}
-
-.project-detail a {
-  text-decoration: none;
-  color: var(--text-headings-color);
 }
 
 .project-detail img{
@@ -25,11 +21,11 @@
   border-radius: 0.2em;
 }
 
-.project-detail a > p {
+.project-detail p {
   padding: 1em;
 }
 
-.project-detail a > h1 {
+.project-detail h1 {
   padding: 1em;
   border-bottom: 0.1em solid var(--golden-text);
   text-shadow: 0 0 0.2em var(--text-primary-color);

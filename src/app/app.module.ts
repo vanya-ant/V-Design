@@ -14,8 +14,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import {KinveyModule} from 'kinvey-angular-sdk';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PasswordsMatchDirective } from './shared/passwords-match.directive';
-import { VerifyKinveyComponent } from './verify-kinvey/verify-kinvey.component';
-import {ProjectService} from './project/project.service';
 import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
@@ -24,7 +22,6 @@ import {HttpClientModule} from '@angular/common/http';
     HomeComponent,
     NotFoundComponent,
     PasswordsMatchDirective,
-    VerifyKinveyComponent,
   ],
   imports: [
     BrowserModule,
