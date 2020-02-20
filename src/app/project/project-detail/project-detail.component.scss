@@ -1,18 +1,12 @@
 @import '../../../assets/scss/responsive';
 
 .project-detail {
-  flex-grow: 1;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   border: 3px solid var(--text-primary-color);
   box-shadow: 3px 3px 8px 0 rgba(0,0,0,0.3);
   padding: 0.5em;
-  display: table;
   color: var(--text-headings-color);
-}
-
-.project-detail:nth-child(1) {
-  margin-top: 0;
 }
 
 .project-detail img{
@@ -29,4 +23,9 @@
   padding: 1em;
   border-bottom: 0.1em solid var(--golden-text);
   text-shadow: 0 0 0.2em var(--text-primary-color);
+}
+
+.project-rating {
+  margin-top: 1em;
+  color: var(--text-headings-color);
 }
