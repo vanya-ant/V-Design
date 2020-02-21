@@ -73,12 +73,12 @@
 
 .project-content a > h1 {
   padding: 1em;
-border-bottom: 0.1em solid var(--golden-text);
-text-shadow: 0 0 0.2em var(--text-primary-color);
+  border-bottom: 0.1em solid var(--golden-text);
+  text-shadow: 0 0 0.2em var(--text-primary-color);
 }
 
-.project-rating {
-  margin-top: 1em;
-  color: var(--text-headings-color);
+.rating-list {
+  display: inline-block;
+  list-style: none;
 }
 

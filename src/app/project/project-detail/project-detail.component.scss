@@ -29,3 +29,25 @@
   margin-top: 1em;
   color: var(--text-headings-color);
 }
+
+.project-rating {
+  margin-top: 1em;
+  color: var(--text-headings-color);
+}
+.rating-list li {
+  float: right;
+  color: var(--text-headings-color);
+  padding: 10px 5px;
+
+}
+
+.rating-list li:hover,
+.rating-list li:hover ~ li, .rating-list li.selected {
+  color: var(--golden-text);
+}
+
+.rating-list {
+  display: inline-block;
+  list-style: none;
+}
+

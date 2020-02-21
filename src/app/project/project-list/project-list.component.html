@@ -1,16 +1,16 @@
 <div class="projects-portfolio">
   <ul class="project-box">
-    <div *ngFor="let project of projects" [routerLink]="project._id">
+    <div *ngFor="let project of projects">
       <li class="project-content">
-        <a routerLink="{{ project._id }}">
+        <a [routerLink]="project._id">
           <h1>{{ project.title }}</h1>
           <p>{{ project.year }}</p>
           <p>{{ project.description}}</p>
         </a>
-        <img src="{{project.imageUrl}}" class="gallery-img"/>
-        <div class="project-rating">
-          <star-rating value="5" totalstars="5" checkedcolor="red" uncheckedcolor="black" size="24px" readonly="false" (rate)="onRate($event)"></star-rating>
-        </div>
+        <img src="{{ project.imageUrl }}" class="gallery-img"/>
+         <div class="rating-list" *ngFor="let i of [].constructor(project.rating)">
+           <i class="fa fa-star"  style="color: var(--golden-text);"></i>
+         </div>
       </li>
     </div>
   </ul>

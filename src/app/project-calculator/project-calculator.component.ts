@@ -12,16 +12,14 @@ export class ProjectCalculatorComponent implements OnInit {
 
   projectCalculatorForm: FormGroup;
   formValue: any;
-  result: number;
 
   constructor(private  fb: FormBuilder, private projectCalculatorService: ProjectCalculatorService) {
     this.projectCalculatorForm = this.fb.group({
-        property: ['Studio', [Validators.required]],
-        project:  ['Basic', [Validators.required]],
-        bedrooms: ['0', [Validators.required, Validators.min(1)]],
-        bathrooms: ['0', [Validators.required, Validators.min(1)]],
-        area: ['0', [Validators.required, Validators.min(1)]],
-        expenses: ['', !Validators],
+      property: ['Studio', [Validators.required]],
+      project:  ['Basic', [Validators.required]],
+      bedrooms: ['0', [Validators.required, Validators.min(0)]],
+      bathrooms: ['0', [Validators.required, Validators.min(1)]],
+      area: ['0', [Validators.required, Validators.min(1)]],
     });
   }
 
@@ -30,7 +28,6 @@ export class ProjectCalculatorComponent implements OnInit {
   }
 
   calculate() {
-    this.result = this.projectCalculatorService.calculate(this.formValue);
-    return this.result;
+    return this.projectCalculatorService.calculate(this.formValue);
   }
 }

@@ -11,6 +11,9 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 export class ProjectDetailComponent implements OnInit {
 
   project: IProject;
+  stars: number[] = [1, 2, 3, 4, 5];
+  selectedValue: number;
+
 
   constructor(private projectService: ProjectService,
               private router: Router,
@@ -22,5 +25,10 @@ export class ProjectDetailComponent implements OnInit {
     this.activatedRoute.params.forEach((params: Params) => {
       this.project = this.projectService.getProject(params.id);
     });
+  }
+
+  countStar(star) {
+    this.selectedValue = star;
+    console.log('Value of star', star);
   }
 }

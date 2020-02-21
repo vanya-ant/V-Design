@@ -6,13 +6,19 @@
       <p>{{ project.description }}</p>
     </div>
     <img src="{{ project.imageUrl }}" class="gallery-img" />
-    <!--<div *ngIf="isAuth">
-      <span class="heading">Rate this project </span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star"></span>
-    </div>-->
+    <div class="project-rating">
+      <p>Rate project</p>
+      <div class="row">
+        <div class="col-sm-12">
+          <ul class="list-inline rating-list"
+              *ngFor="let star of stars" style="display: inline-block" >
+            <li (click)="countStar(star)"
+                [ngClass]="{'selected': (star <= selectedValue)}">
+              <i class="fa fa-star"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
