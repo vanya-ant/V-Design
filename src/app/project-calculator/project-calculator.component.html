@@ -1,6 +1,6 @@
 <div class="project-calculator">
   <img src="/assets/img/calc.jpg"/>
-  <form [formGroup]="projectCalculatorForm" (ngSubmit)="calculate()">
+  <form [formGroup]="projectCalculatorForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label>Type of property</label>
       <select formControlName="property">
@@ -35,16 +35,9 @@
     <p class="error-message" *ngIf="projectCalculatorForm.get('area').invalid && projectCalculatorForm.get('area').touched">Please enter valid housing area!</p>
     <div class="form-group">
       <label>Approximate Project Design Expenses</label>
-      <div *ngIf="projectCalculatorForm.valid" class="form-control" style="padding-left: 2em; color: var(--golden-text); font-weight: bold;">
-        <h1>{{calculate()}}</h1>
+      <div *ngIf="projectCalculatorForm.valid" class="form-control" style="padding-left: 2em; color: var(--golden-text); font-weight: bold; font-size: large">
+        <h1>{{calculate().toFixed(2)}} lv.</h1>
       </div>
     </div>
   </form>
-<!--  <button class="button" type="submit"  [disabled]="projectCalculatorForm.invalid" >
-    Calculate
-    <div class="button__horizontal"></div>
-    <div class="button__vertical"></div>
-  </button>-->
 </div>
-{{ projectCalculatorForm.value | json }}
-{{ calculate().toFixed(2) | json }}

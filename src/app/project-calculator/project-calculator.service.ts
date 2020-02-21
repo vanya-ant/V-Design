@@ -9,7 +9,7 @@ export class ProjectCalculatorService {
 
   constructor() { }
 
-  calculate(formData: any) {
+  calculate(formData) {
     const  House = 1.1;
     const  Office = 1.2;
     const  RetailProperty = 3;

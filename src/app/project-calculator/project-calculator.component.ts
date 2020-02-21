@@ -12,6 +12,7 @@ export class ProjectCalculatorComponent implements OnInit {
 
   projectCalculatorForm: FormGroup;
   formValue: any;
+  submitted = false;
 
   constructor(private  fb: FormBuilder, private projectCalculatorService: ProjectCalculatorService) {
     this.projectCalculatorForm = this.fb.group({
@@ -24,10 +25,14 @@ export class ProjectCalculatorComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.formValue = this.projectCalculatorForm.value;
+  }
+
+  loadData() {
+     this.formValue = this.projectCalculatorForm.value;
   }
 
   calculate() {
+    this.loadData();
     return this.projectCalculatorService.calculate(this.formValue);
   }
 }
