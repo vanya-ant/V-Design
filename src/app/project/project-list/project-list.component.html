@@ -9,19 +9,8 @@
         </a>
         <img src="{{project.imageUrl}}" class="gallery-img"/>
         <div class="project-rating">
-          <span class="heading">Project Rating </span>
-          <span class="fa fa-star checked" ></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
+          <star-rating value="5" totalstars="5" checkedcolor="red" uncheckedcolor="black" size="24px" readonly="false" (rate)="onRate($event)"></star-rating>
         </div>
-    <!--    <app-rating [(rate)]="selected" (hover)="hovered=$event" (leave)="hovered=0" [readonly]="readonly"></app-rating>
-              <hr>
-           <pre>
-             Selected: <b>{{selected}}</b>
-            Hovered: <b>{{hovered}}</b>
-          </pre>-->
       </li>
     </div>
   </ul>

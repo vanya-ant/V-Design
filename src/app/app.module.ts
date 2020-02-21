@@ -15,6 +15,7 @@ import {KinveyModule} from 'kinvey-angular-sdk';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PasswordsMatchDirective } from './shared/passwords-match.directive';
 import {HttpClientModule} from '@angular/common/http';
+import { RatingModule } from 'ng-starrating';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import {HttpClientModule} from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    RatingModule
   ],
   providers: [],
   exports: [],
