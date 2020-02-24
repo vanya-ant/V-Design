@@ -26,7 +26,7 @@ export class ProjectCalculatorService {
       case 'House': this.result = this.calculatePropertyArea(formData) *
         (formData.bathrooms + formData.bedrooms) * House;
                     break;
-      case 'RetailProperty': this.result = this.calculatePropertyArea(formData) *
+      case 'Commercial property': this.result = this.calculatePropertyArea(formData) *
         (formData.bathrooms + formData.bedrooms) * RetailProperty;
                              break;
     }

@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
 import {ProjectCalculatorService} from './project-calculator.service';
-import {finished} from 'stream';
 
 @Component({
   selector: 'app-project-calculator',

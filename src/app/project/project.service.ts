@@ -1,20 +1,19 @@
 import { Injectable } from '@angular/core';
 import { IProject } from '../shared/project';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import {DataStoreService, DataStoreType} from 'kinvey-angular-sdk/lib';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class ProjectService {
   projects: IProject[];
   project: IProject;
 
-  constructor(private http: HttpClient) {}
+  constructor(private dataStoreService: DataStoreService) {}
 
   loadProjects() {
-    this.http.get<IProject[]>('http://localhost:3000/projects').subscribe(projects => {
-      this.projects = projects;
-    });
+   this.projects = this.dataStoreService.collection('projects', DataStoreType.Auto);
   }
 
   getProject(id: string) {
