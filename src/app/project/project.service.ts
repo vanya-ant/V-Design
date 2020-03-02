@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import {Injectable, InjectionToken} from '@angular/core';
 import { IProject } from '../shared/project';
-import {DataStoreService, DataStoreType} from 'kinvey-angular-sdk/lib';
+import { DataStoreService } from 'kinvey-angular-sdk';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class ProjectService {
   constructor(private dataStoreService: DataStoreService) {}
 
   loadProjects() {
-   this.projects = this.dataStoreService.collection('projects', DataStoreType.Auto);
+   this.projects = this.dataStoreService.collection('projects');
   }
 
   getProject(id: string) {

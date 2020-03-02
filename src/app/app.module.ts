@@ -18,6 +18,10 @@ import {HttpClientModule} from '@angular/common/http';
 import { RatingModule } from 'ng-starrating';
 import { VerifyKinveyComponent } from './verify-kinvey/verify-kinvey.component';
 import '@angular/compiler';
+import {ProjectService} from './project/project.service';
+import {DataStoreService, UserService} from 'kinvey-angular-sdk/lib';
+import {ProjectCalculatorService} from './project-calculator/project-calculator.service';
+import {ContactsService} from './contacts/contacts.service';
 
 @NgModule({
   declarations: [
@@ -37,17 +41,16 @@ import '@angular/compiler';
     ContactsModule,
     AppRoutingModule,
     RouterModule,
-    KinveyModule,
     KinveyModule.init({
         appKey: 'kid_SkcXBlwQ8',
-        appSecret: '0bfab2722e3548dca29aad19cd11f4aa'
+        appSecret: '0bfab2722e3548dca29aad19cd11f4aa',
     }),
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     RatingModule
   ],
-  providers: [],
+  providers: [ProjectService, UserService, DataStoreService, ProjectCalculatorService, ContactsService, KinveyModule],
   exports: [],
   bootstrap: [AppComponent]
 })

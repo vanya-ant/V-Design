@@ -10,8 +10,7 @@ import {StarRatingComponent} from 'ng-starrating';
 })
 
 export class ProjectListComponent implements OnInit {
-
-  get projects() { return this.projectService.projects; }
+  projects: IProject[];
 
   constructor(private projectService: ProjectService) { }
 
