@@ -1,6 +1,8 @@
 // @ts-ignore
 import { User } from 'kinvey-angular-sdk';
-const user = new User({
+
+// @ts-ignore
+export const User = new User({
   _id: '<user-id>',
   _acl: { /* ACL */ },
   _kmd: { /* Metadata */ },

@@ -2,7 +2,7 @@
   <img src="/assets/img/lock.jpg">
   <div class="logo-form">Login</div>
   <div class="login-form">
-    <form [formGroup]="loginForm">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
       <div class="form-field">
         <label class="user" for="login-username"><span class="hidden">Username</span></label>
         <input formControlName="username" id="login-username" type="text" class="form-input" placeholder="Username" required>

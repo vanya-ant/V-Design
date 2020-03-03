@@ -2,7 +2,7 @@
   <img src="/assets/img/door-open.jpg">
   <div class="logo-form">Register</div>
   <div class="register-form">
-    <form [formGroup]="registerForm">
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
       <div class="form-field">
         <label class="user" for="login-username"><span class="hidden">Username</span></label>
         <input formControlName="username" id="login-username" type="text" class="form-input" placeholder="Username" required>

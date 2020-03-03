@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'kinvey-angular-sdk/lib';
 
-
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
