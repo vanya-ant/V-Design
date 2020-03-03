@@ -16,7 +16,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PasswordsMatchDirective } from './shared/passwords-match.directive';
 import {HttpClientModule} from '@angular/common/http';
 import { RatingModule } from 'ng-starrating';
-import { VerifyKinveyComponent } from './verify-kinvey/verify-kinvey.component';
+/*import { VerifyKinveyComponent } from './verify-kinvey/verify-kinvey.component';*/
 import '@angular/compiler';
 import {ProjectService} from './project/project.service';
 import {DataStoreService, UserService} from 'kinvey-angular-sdk/lib';
@@ -29,7 +29,7 @@ import {ContactsService} from './contacts/contacts.service';
     HomeComponent,
     NotFoundComponent,
     PasswordsMatchDirective,
-    VerifyKinveyComponent,
+  /*  VerifyKinveyComponent,*/
   ],
   imports: [
     BrowserModule,
@@ -44,6 +44,7 @@ import {ContactsService} from './contacts/contacts.service';
     KinveyModule.init({
         appKey: 'kid_SkcXBlwQ8',
         appSecret: '0bfab2722e3548dca29aad19cd11f4aa',
+        masterSecret: '28d547fcbcf14bfbabe5d6ae4978ad4c',
     }),
     FormsModule,
     ReactiveFormsModule,

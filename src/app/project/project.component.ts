@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProjectService} from './project.service';
 import {IProject} from '../shared/project';
+import {Observable} from 'rxjs';
 
 
 @Component({
@@ -10,11 +11,10 @@ import {IProject} from '../shared/project';
 })
 
 export class ProjectComponent implements OnInit {
-  get projects() { return this.projectService.projects; }
 
-  constructor(private projectService: ProjectService) { }
+  projects: IProject[] = this.projectService.projects;
 
-  ngOnInit() {
-    this.projectService.loadProjects();
-  }
+  constructor(private projectService: ProjectService) {}
+
+  ngOnInit() {}
 }

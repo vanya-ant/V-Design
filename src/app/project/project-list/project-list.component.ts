@@ -10,11 +10,10 @@ import {StarRatingComponent} from 'ng-starrating';
 })
 
 export class ProjectListComponent implements OnInit {
-  projects: IProject[];
+
+  projects: IProject[] = this.projectService.projects;
 
   constructor(private projectService: ProjectService) { }
 
-  ngOnInit() {
-    this.projectService.loadProjects();
-  }
+  ngOnInit() {}
 }
