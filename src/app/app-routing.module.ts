@@ -1,5 +1,4 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {LoginComponent} from './user/login/login.component';
@@ -12,7 +11,6 @@ import {ProjectListComponent} from './project/project-list/project-list.componen
 import {AboutComponent} from './about/about.component';
 import {ProjectComponent} from './project/project.component';
 
-
 const routes: Routes = [
   {
     path: '',
@@ -22,7 +20,6 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    canActivate: [AuthGuard],
     data: {
       isLogged: false
     }
@@ -30,15 +27,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
-    canActivate: [AuthGuard],
-    data: {
-      isLogged: false
-    }
   },
   {
     path: 'contacts',
     component: ContactsComponent,
-    canActivate: [AuthGuard],
     data: {
       isLogged: false
     },
@@ -46,7 +38,6 @@ const routes: Routes = [
   {
     path: 'project-calculator',
     component: ProjectCalculatorComponent,
-    canActivate: [AuthGuard],
     data: {
       isLogged: false
     }
@@ -54,7 +45,6 @@ const routes: Routes = [
   {
     path: 'projects-portfolio',
     component: ProjectListComponent,
-    canActivate: [AuthGuard],
     data: {
       isLogged: false
     }
@@ -62,7 +52,6 @@ const routes: Routes = [
   {
     path: 'portfolio',
     component: ProjectComponent,
-    canActivate: [AuthGuard],
     data: {
       isLogged: false
     }
@@ -70,7 +59,6 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent,
-    canActivate: [AuthGuard]
   },
   {
     path: '**',

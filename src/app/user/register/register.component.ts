@@ -41,9 +41,9 @@ export class RegisterComponent implements OnInit {
     const registerObj = this.registerForm.value;
     delete registerObj.rePassword;
     try {
-      const user = await this.userService.signup(registerObj);
+      await this.userService.signup(registerObj);
       await this.router.navigate(['/']);
-      this.toastr.success('Registered');
+      this.toastr.success('Successfully registered');
 
     } catch (error) {
       this.toastr.error('Error');
@@ -54,7 +54,7 @@ export class RegisterComponent implements OnInit {
     try {
       await this.userService.logout();
       localStorage.clear();
-      this.toastr.success('Logged out');
+      this.toastr.success('Successfully logged out');
     } catch (error) {
       this.toastr.error('Error');
     }

@@ -13,10 +13,17 @@
         <a class="page-link" routerLink="/project-calculator">Project Calculator</a>
     <div class="border-animation"></div>
         <a class="page-link" routerLink="/contacts">Contacts</a>
-    <div class="site-nav-login-register">
-      <a class="page-link" routerLink="/login">Login</a>
-      <a class="page-link" routerLink="/register">Register</a>
-    </div>
+    <div *ngIf="!isLogged">
+       <div class="site-nav-login-register">
+         <a class="page-link" routerLink="/login">Login</a>
+          <a class="page-link" routerLink="/register">Register</a>
+       </div>
+  </div>
+   <div *ngIf="isLogged">
+     <div class="site-nav-login-register">
+       <a class="page-link" routerLink="/logout" (click)="logout()">Logout</a>
+     </div>
+   </div>
   </nav>
 </header>
 

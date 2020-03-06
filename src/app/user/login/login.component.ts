@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserService } from 'kinvey-angular-sdk/lib';
+import { UserService } from 'kinvey-angular-sdk';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
@@ -35,10 +35,9 @@ export class LoginComponent implements OnInit {
 
   async login() {
     try {
-      const user = await this.userService
-        .login(this.loginForm.value.username, this.loginForm.value.password);
-      await this.router.navigate(['/']);
-      this.toastr.success('Logged in');
+      await this.userService.login(this.loginForm.value.username, this.loginForm.value.password);
+      await this.router.navigate(['/home']);
+      this.toastr.success('Successfully logged in');
     } catch (error) {
       this.toastr.error('error');
     }
@@ -48,7 +47,7 @@ export class LoginComponent implements OnInit {
     try {
       await this.userService.logout();
       localStorage.clear();
-      this.toastr.success('Logged out');
+      this.toastr.success('Successfully logged out');
     } catch (error) {
       this.toastr.error('error');
     }
