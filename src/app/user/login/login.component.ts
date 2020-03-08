@@ -12,7 +12,6 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-
   constructor(private fb: FormBuilder,
               private userService: UserService,
               private router: Router,
@@ -23,19 +22,19 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  get activeUser() {
+    return this.userService.getActiveUser();
+  }
+
   ngOnInit() {
     if (this.activeUser) {
       this.logout();
     }
   }
 
-  get activeUser() {
-    return this.userService.getActiveUser();
-  }
-
   async login() {
     try {
-      await this.userService.login(this.loginForm.value.username, this.loginForm.value.password);
+      const user = await this.userService.login(this.loginForm.value.username, this.loginForm.value.password);
       await this.router.navigate(['/home']);
       this.toastr.success('Successfully logged in');
     } catch (error) {

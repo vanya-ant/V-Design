@@ -42,7 +42,7 @@ export class RegisterComponent implements OnInit {
     delete registerObj.rePassword;
     try {
       await this.userService.signup(registerObj);
-      await this.router.navigate(['/']);
+      await this.router.navigate(['projects-portfolio']);
       this.toastr.success('Successfully registered');
 
     } catch (error) {
