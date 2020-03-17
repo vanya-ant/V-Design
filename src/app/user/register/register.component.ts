@@ -39,11 +39,15 @@ export class RegisterComponent implements OnInit {
 
   async register() {
     const registerObj = this.registerForm.value;
-    delete registerObj.rePassword;
+    delete registerObj.passwords;
     try {
-      await this.userService.signup(registerObj);
-      await this.router.navigate(['projects-portfolio']);
-      this.toastr.success('Successfully registered');
+      if (!this.userService.exists(registerObj.valueOf('username'))) {
+        await this.userService.signup(registerObj);
+        await this.router.navigate(['projects-portfolio']);
+        this.toastr.success('Successfully registered');
+      }
+
+      this.toastr.error('Username already exists!');
 
     } catch (error) {
       this.toastr.error('Error');

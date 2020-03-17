@@ -4,7 +4,6 @@ import { UserService } from 'kinvey-angular-sdk';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -34,11 +33,11 @@ export class LoginComponent implements OnInit {
 
   async login() {
     try {
-      const user = await this.userService.login(this.loginForm.value.username, this.loginForm.value.password);
-      await this.router.navigate(['/home']);
+      await this.userService.login(this.loginForm.value.username, this.loginForm.value.password);
+      await this.router.navigate(['projects-portfolio']);
       this.toastr.success('Successfully logged in');
     } catch (error) {
-      this.toastr.error('error');
+      this.toastr.error('Error');
     }
   }
 
@@ -48,7 +47,7 @@ export class LoginComponent implements OnInit {
       localStorage.clear();
       this.toastr.success('Successfully logged out');
     } catch (error) {
-      this.toastr.error('error');
+      this.toastr.error('Error');
     }
   }
 }

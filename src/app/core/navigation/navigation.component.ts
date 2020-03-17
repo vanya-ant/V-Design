@@ -19,7 +19,7 @@ export class NavigationComponent implements OnInit {
     try {
       await this.userService.logout();
       localStorage.clear();
-      await this.router.navigate(['/home']);
+      await this.router.navigate(['home']);
     } catch (error) {
       console.log(error);
     }
