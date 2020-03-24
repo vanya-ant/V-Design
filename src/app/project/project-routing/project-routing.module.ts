@@ -14,14 +14,6 @@ const routes: Routes = [
         component: ProjectListComponent,
       },
       {
-        path: 'project-create',
-        component: ProjectCreateComponent,
-        canActivate: [AuthGuard],
-        data: {
-          isLogged: true
-        }
-      },
-      {
         path: ':id',
         component: ProjectDetailComponent,
         data: {

@@ -1,1 +1,27 @@
-<p>project-create works!</p>
+<div class="create-project">
+  <div class="logo-form">Create project</div>
+  <form [formGroup]="form">
+    <div class="form-field">
+      <label class="title" for="create-title"><span class="hidden">Project title</span></label>
+      <input id="create-title" formControlName="title" value="Project title">
+    </div>
+    <div class="form-field">
+      <label class="description" for="create-description"><span class="hidden">Project description</span></label>
+    <input id="create-description" formControlName="create-desrtiption">
+    </div>
+    <div class="form-field">
+      <label class="year" for="create-year"><span class="hidden">Project year</span></label>
+      <input type="number" min="1900" max="2099" step="1" value="2020" id="create-year" formControlName="create-year"/>
+    </div>
+    <div class="form-field">
+      <label class="year" for="image-Url"><span class="hidden">Project image</span></label>
+      <input id="image-Url" formControlName="imageUrl"  value="Paste project img">
+    </div>
+    <button class="button">
+      Create project
+      <div class="button__horizontal"></div>
+      <div class="button__vertical"></div>
+    </button>
+  </form>
+</div>
+

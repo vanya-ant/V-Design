@@ -10,6 +10,7 @@ import {ProjectCalculatorComponent} from './project-calculator/project-calculato
 import {ProjectListComponent} from './project/project-list/project-list.component';
 import {AboutComponent} from './about/about.component';
 import {ProjectComponent} from './project/project.component';
+import {ProjectCreateComponent} from './project/project-create/project-create.component';
 
 const routes: Routes = [
   {
@@ -52,6 +53,13 @@ const routes: Routes = [
   {
     path: 'portfolio',
     component: ProjectComponent,
+    data: {
+      isLogged: false
+    }
+  },
+  {
+    path: 'project-create',
+    component: ProjectCreateComponent,
     data: {
       isLogged: false
     }
