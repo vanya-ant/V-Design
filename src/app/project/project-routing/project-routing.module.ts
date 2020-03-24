@@ -14,11 +14,11 @@ const routes: Routes = [
         component: ProjectListComponent,
       },
       {
-        path: 'create',
+        path: 'project-create',
         component: ProjectCreateComponent,
         canActivate: [AuthGuard],
         data: {
-          isLogged: false
+          isLogged: true
         }
       },
       {

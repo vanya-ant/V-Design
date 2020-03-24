@@ -9,6 +9,25 @@ import {Router} from '@angular/router';
 })
 export class NavigationComponent implements OnInit {
   get isLogged() { return !!this.userService.getActiveUser(); }
+
+  get isAdmin() {
+    if (this.isLogged) {
+      // @ts-ignore
+      const admin = this.userService.getActiveUser().data.role === 'Admin';
+      return true;
+    }
+    return false;
+  }
+
+  get isDesigner() {
+    if (this.isLogged) {
+      // @ts-ignore
+      const admin = this.userService.getActiveUser().data.role === 'Desiger';
+      return true;
+    }
+    return false;
+  }
+
   constructor(private userService: UserService,
               private router: Router) { }
 

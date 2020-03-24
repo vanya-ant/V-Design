@@ -1,11 +1,6 @@
-// @ts-ignore
-import { User } from 'kinvey-angular-sdk';
+import { User } from 'kinvey-html5-sdk';
+import { Role } from './role.enum';
 
-// @ts-ignore
-export const User = new User({
-  _id: '<user-id>',
-  _acl: { /* ACL */ },
-  _kmd: { /* Metadata */ },
-  username: '<username>',
-  password: '<password>',
-});
+export class VUser extends User {
+  role: Role;
+}

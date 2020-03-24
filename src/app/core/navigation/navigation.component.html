@@ -20,6 +20,12 @@
        </div>
   </div>
    <div *ngIf="isLogged">
+     <div *ngIf="isAdmin">
+       <a class="page-link" routerLink="project-create">Create project</a>
+     </div>
+     <div *ngIf="isDesigner">
+       <a class="page-link" routerLink="project-create">Create project</a>
+     </div>
      <div class="site-nav-login-register">
        <a class="page-link" routerLink="/" (click)="logout()">Logout</a>
      </div>
