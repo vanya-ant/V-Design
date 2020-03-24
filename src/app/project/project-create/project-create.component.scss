@@ -1,8 +1,20 @@
-.create-project {
+.create-project-container {
+  background-color: var(--text-headings-color);
   width: 100vw;
+  height: 100vh;
+}
+
+.create-project {
+  width: 80vw;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
+  background-color: var(--text-primary-color);
+  background-blend-mode: hue;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  color: var(--text-headings-color);
 }
 
 .logo-form {
@@ -14,47 +26,36 @@
   padding-left: 0.5em;
 }
 
-.create-project {
-  width: 80vw;
-  height: auto;
-  border: 0.2em solid var(--text-primary-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0.5em;
-  margin: 1.4em 0.5em;
-}
-
 .create-project input {
   font-style: italic;
-  color: var(--golden-text); border: 2px solid var(--golden-text);
+  color: var(--golden-text);
+  border: 2px solid var(--golden-text);
   background-color:var(--text-primary-color);
   padding: 0.2em;
 }
 
-.create-project select {
+.create-project input {
   color: var(--golden-text); border: 2px solid var(--golden-text);
-  background-color:var(--text-primary-color);
+  background-color:white;
 }
 
-inputcreate-project.touched {
+input.create-project.touched {
   border-color: var(--header-and-footer-color);
 }
 
-.create-project button {
+button {
   margin: 2em auto;
 }
 
-div .form-field:last-child {
+div.form-field:last-child {
   margin-bottom: 2em;
 }
-
 
 .create-project select {
   color: var(--text-headings-color);
 }
 
-inputcreate-project.touched {
+input.create-project.touched {
   border: 2em solid var(--golden-text);
 }
 

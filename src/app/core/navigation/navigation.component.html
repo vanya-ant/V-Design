@@ -20,10 +20,7 @@
        </div>
   </div>
    <div *ngIf="isLogged">
-     <div *ngIf="isAdmin">
-       <a class="page-link" routerLink="/project-create">Create project</a>
-     </div>
-     <div *ngIf="isDesigner">
+     <div *ngIf="isAdmin || isDesigner">
        <a class="page-link" routerLink="/project-create">Create project</a>
      </div>
      <div class="site-nav-login-register">
