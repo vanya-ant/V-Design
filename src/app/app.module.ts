@@ -12,7 +12,6 @@ import { KinveyModule } from 'kinvey-angular-sdk';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PasswordsMatchDirective } from './shared/passwords-match.directive';
 import { HttpClientModule } from '@angular/common/http';
-/*import { RatingModule } from 'ng-starrating';*/
 
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AppComponent } from './app.component';
@@ -47,7 +46,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-/*    RatingModule,*/
     ToastrModule.forRoot({
       timeOut: 10000,
       positionClass: 'toast-bottom-right',

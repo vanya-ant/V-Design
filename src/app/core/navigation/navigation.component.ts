@@ -8,13 +8,13 @@ import {Router} from '@angular/router';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
+
   get isLogged() { return !!this.userService.getActiveUser(); }
 
   get isAdmin() {
     if (this.isLogged) {
       // @ts-ignore
-      const admin = this.userService.getActiveUser().data.role === 'Admin';
-      return true;
+      return this.userService.getActiveUser().data.role === 'Admin';
     }
     return false;
   }
@@ -22,11 +22,12 @@ export class NavigationComponent implements OnInit {
   get isDesigner() {
     if (this.isLogged) {
       // @ts-ignore
-      const admin = this.userService.getActiveUser().data.role === 'Desiger';
-      return true;
+      return this.userService.getActiveUser().data.role === 'Designer';
     }
     return false;
   }
+
+  get admin() { return this.userService.getActiveUser(); }
 
   constructor(private userService: UserService,
               private router: Router) { }
@@ -38,7 +39,7 @@ export class NavigationComponent implements OnInit {
     try {
       await this.userService.logout();
       localStorage.clear();
-      await this.router.navigate(['home']);
+      await this.router.navigate(['/']);
     } catch (error) {
       console.log(error);
     }

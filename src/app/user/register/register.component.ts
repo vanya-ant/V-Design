@@ -4,7 +4,6 @@ import { passwordMatch } from '../../shared/validators';
 import { UserService } from 'kinvey-angular-sdk';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { VUser } from '../../shared/user';
 
 @Component({
   selector: 'app-register',
@@ -42,15 +41,9 @@ export class RegisterComponent implements OnInit {
     const registerObj = this.registerForm.value;
     delete registerObj.passwords;
     try {
-      if (!this.userService.exists(registerObj.valueOf('username'))) {
-        const user = new VUser(registerObj);
-        await this.userService.signup(user);
+        await this.userService.signup(registerObj);
         await this.router.navigate(['projects-portfolio']);
         this.toastr.success('Successfully registered');
-      }
-
-      this.toastr.error('Username already exists!');
-
     } catch (error) {
       this.toastr.error('Error');
     }

@@ -16,8 +16,7 @@ export class ProjectDetailComponent implements OnInit {
   get isAdmin() {
     if (this.isLogged) {
       // @ts-ignore
-      const admin = this.userService.getActiveUser().data.role === 'Admin';
-      return true;
+      return this.userService.getActiveUser().data.role === 'Admin';
     }
     return false;
   }
