@@ -125,7 +125,7 @@
   "defaultProject": "V-Design",
   "schematics": {
     "@schematics/angular:component": {
-      "styleext": "scss"
+      "style": "scss"
     }
   },
   "cli": {

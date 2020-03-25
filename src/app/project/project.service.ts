@@ -3,8 +3,7 @@ import { IProject } from '../shared/project';
 import { DataStoreService } from 'kinvey-angular-sdk';
 import { DataStoreType } from 'kinvey-angular-sdk';
 import {UserService} from 'kinvey-angular-sdk';
-import {FormBuilder} from '@angular/forms';
-import {ToastrService} from 'ngx-toastr';
+import {createUrlResolverWithoutPackagePrefix} from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -43,5 +42,19 @@ export class ProjectService {
     }
     this.projects = [];
     this.getAllProjects();
+  }
+
+  async rate(star, id: string) {
+      const currentProject = await this.getProject(id);
+      if (currentProject.rating === 0) {
+        currentProject.rating += star;
+      }
+      if (currentProject.rating !== 5) {
+        currentProject.rating += star;
+        currentProject.rating = currentProject.rating / 2;
+        Math.round(currentProject.rating);
+      }
+
+      this.dataStore.update(currentProject);
   }
 }

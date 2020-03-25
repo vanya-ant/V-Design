@@ -44,6 +44,8 @@ export class ProjectDetailComponent implements OnInit {
   countStar(star) {
     this.selectedValue = star;
     console.log('Value of star', star);
+    this.projectService.rate(star, this.project._id);
+    this.toastr.success(`Successfully rated project with ${star} stars!`);
   }
 
   async delete(id: string) {
