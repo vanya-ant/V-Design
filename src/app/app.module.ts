@@ -43,7 +43,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     KinveyModule.init({
         appKey: 'kid_SkcXBlwQ8',
         appSecret: '0bfab2722e3548dca29aad19cd11f4aa',
-/*        masterSecret: '28d547fcbcf14bfbabe5d6ae4978ad4c',*/
     }),
     FormsModule,
     ReactiveFormsModule,

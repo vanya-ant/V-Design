@@ -49,11 +49,9 @@ export class ProjectService {
       if (currentProject.rating === 0) {
         currentProject.rating += star;
       }
-      if (currentProject.rating !== 5) {
-        currentProject.rating += star;
-        currentProject.rating = currentProject.rating / 2;
-        Math.round(currentProject.rating);
-      }
+      currentProject.rating += star;
+      currentProject.rating = currentProject.rating / 2;
+      Math.round(currentProject.rating);
 
       this.dataStore.update(currentProject);
   }

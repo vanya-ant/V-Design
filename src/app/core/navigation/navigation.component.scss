@@ -40,6 +40,9 @@
 }
 
 .site-nav {
+  display:flex;
+  justify-content:space-between;
+
   @include bp (mobile)  {
     height: auto;
     display: block;
@@ -64,10 +67,6 @@
   }
 }
 
-.site-nav ul {
-  list-style:none;
-}
-
 .page-link {
   align-self: center;
 }
@@ -76,7 +75,7 @@
   color: var(--golden-text);
 }
 
-.active a{
+.active a {
   color: var(--golden-text);
 }
 
