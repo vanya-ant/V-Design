@@ -32,6 +32,7 @@ export class ProjectService {
 
   async create(project: IProject) {
     await this.dataStore.save(project);
+    this.projects = [];
     this.getAllProjects();
   }
 
@@ -40,6 +41,7 @@ export class ProjectService {
     if (project) {
       await this.dataStore.removeById(id);
     }
+    this.projects = [];
     this.getAllProjects();
   }
 }

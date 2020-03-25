@@ -26,11 +26,9 @@
 }
 
 .project-rating {
-  margin-top: 1em;
-  color: var(--text-headings-color);
-}
-
-.project-rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-top: 1em;
   color: var(--text-headings-color);
 }

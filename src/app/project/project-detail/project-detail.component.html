@@ -20,10 +20,10 @@
            </ul>
          </div>
        </div>
+       <div *ngIf="isLogged && isAdmin" class="delete-button">
+         <a (click)="delete(project._id)">Delete project</a>
+       </div>
      </div>
    </div>
-    <div *ngIf="isLogged && isAdmin" class="delete-button">
-      <a (click)="delete(project._id)">Delete project</a>
-    </div>
   </div>
 </div>
