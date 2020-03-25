@@ -2,6 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import {IProject} from '../../shared/project';
 import {ProjectService} from '../project.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
+import {UserService} from 'kinvey-angular-sdk';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-project-detail',
@@ -10,6 +12,16 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 })
 export class ProjectDetailComponent implements OnInit {
 
+  get isLogged() { return !!this.userService.getActiveUser(); }
+  get isAdmin() {
+    if (this.isLogged) {
+      // @ts-ignore
+      const admin = this.userService.getActiveUser().data.role === 'Admin';
+      return true;
+    }
+    return false;
+  }
+
   project: IProject;
   stars: number[] = [1, 2, 3, 4, 5];
   selectedValue: number;
@@ -17,7 +29,9 @@ export class ProjectDetailComponent implements OnInit {
 
   constructor(private projectService: ProjectService,
               private router: Router,
-              private activatedRoute: ActivatedRoute) {
+              private activatedRoute: ActivatedRoute,
+              private userService: UserService,
+              private toastr: ToastrService) {
     this.project = this.activatedRoute.snapshot.data.project;
   }
 
@@ -30,5 +44,11 @@ export class ProjectDetailComponent implements OnInit {
   countStar(star) {
     this.selectedValue = star;
     console.log('Value of star', star);
+  }
+
+  async delete(id: string) {
+    await this.projectService.delete(id);
+    await this.router.navigate(['projects-portfolio']);
+    this.toastr.success('Successfully deleted project');
   }
 }

@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {IProject} from '../../shared/project';
 import {ProjectService} from '../project.service';
 import {UserService} from 'kinvey-angular-sdk';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-project-create',
@@ -14,7 +15,11 @@ export class ProjectCreateComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor( private fb: FormBuilder, private projectService: ProjectService, private userService: UserService) {
+  constructor( private fb: FormBuilder,
+               private projectService: ProjectService,
+               private userService: UserService,
+               private router: Router,
+               private toastr: ToastrService) {
     this.form = this.fb.group({
       title: ['', [Validators.required]],
       author: ['', [Validators.required]],
@@ -41,5 +46,7 @@ export class ProjectCreateComponent implements OnInit {
     project.rating = 0;
 
     await this.projectService.create(project);
+    await this.router.navigate(['projects-portfolio']);
+    this.toastr.success('Successfully created project');
   }
 }

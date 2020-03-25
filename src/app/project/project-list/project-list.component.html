@@ -8,9 +8,14 @@
           <p>{{ project.description}}</p>
         </a>
         <img src="{{ project.imageUrl }}" class="gallery-img"/>
-         <div class="rating-list" *ngFor="let i of [].constructor(project.rating)">
-           <i class="fa fa-star"  style="color: var(--golden-text);"></i>
-         </div>
+        <div *ngIf="project.rating != 0">
+          <div class="rating-list" *ngFor="let i of [].constructor(project.rating)">
+            <i class="fa fa-star"  style="color: var(--golden-text);"></i>
+          </div>
+        </div>
+        <div *ngIf="project.rating == 0">
+          <p>Project not rated yet!</p>
+        </div>
       </li>
     </div>
   </ul>

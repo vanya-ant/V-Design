@@ -15,7 +15,7 @@ export class ProjectService {
   project: IProject;
   private dataStore: any;
 
-  constructor(private dataStoreService: DataStoreService, private userService: UserService, private toastr: ToastrService) {
+  constructor(private dataStoreService: DataStoreService, private userService: UserService) {
     this.dataStore = this.dataStoreService.collection('projects', DataStoreType.Network);
     this.getAllProjects();
   }
@@ -31,7 +31,15 @@ export class ProjectService {
   }
 
   async create(project: IProject) {
-    await this.dataStore.save(project).then(success => this.toastr.show('Successfully created project!'))
-      .error(error => this.toastr.show('Error!'));
+    await this.dataStore.save(project);
+    this.getAllProjects();
+  }
+
+  async delete(id: string) {
+    const project = this.projects.find(p => p._id === id);
+    if (project) {
+      await this.dataStore.removeById(id);
+    }
+    this.getAllProjects();
   }
 }
