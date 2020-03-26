@@ -34,14 +34,14 @@
   margin-right:2em;
 }
 
-.site-header,.site-nav,footer{
+.site-header,footer{
   display:flex;
   justify-content:space-between;
 }
 
 .site-nav {
   display:flex;
-  justify-content:space-between;
+  justify-content:space-evenly;
 
   @include bp (mobile)  {
     height: auto;

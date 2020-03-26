@@ -2,7 +2,6 @@
   <div class=logo>
   <a class="page-link" routerLink=""><img src="/assets/img/logo-2.png"></a>
   </div>
-  <div *ngIf="!isLogged">
     <nav class="site-nav" id="nav">
       <div class="border-animation"></div>
       <a class="page-link active" routerLink="/about">About</a>
@@ -14,26 +13,19 @@
       <a class="page-link" routerLink="/project-calculator">Project Calculator</a>
       <div class="border-animation"></div>
       <a class="page-link" routerLink="/contacts">Contacts</a>
+      <div *ngIf="isAdmin || isDesigner">
+          <a class="page-link" routerLink="/project-create">Create project</a>
+      </div>
       <div *ngIf="!isLogged">
         <div class="site-nav-login-register">
           <a class="page-link" routerLink="/login">Login</a>
           <a class="page-link" routerLink="/register">Register</a>
         </div>
       </div>
+      <div *ngIf="isLogged">
+          <div class="site-nav-login-register">
+            <a class="page-link" routerLink="/" (click)="logout()">Logout</a>
+          </div>
+        </div>
   </nav>
-  </div>
-  <div *ngIf="isLogged">
-    <nav class="site-nav">
-      <div *ngIf="isAdmin || isDesigner">
-        <div class="border-animation"></div>
-        <a class="page-link" routerLink="/projects-portfolio">Projects</a>
-        <div class="border-animation"></div>
-        <a class="page-link" routerLink="/project-create">Create project</a>
-      </div>
-      <div>
-        <div class="site-nav-login-register"></div>
-        <a class="page-link" routerLink="/" (click)="logout()">Logout</a>
-      </div>
-    </nav>
-  </div>
 </header>
