@@ -1,3 +1,5 @@
+@import '../../../assets/scss/responsive';
+
 .create-project-container {
   background-color: var(--text-headings-color);
   width: 100vw;
@@ -16,6 +18,18 @@
   padding-bottom: 1em;
   padding-top: 1em;
   color: var(--text-headings-color);
+
+  @include bp (mobile)  {
+    padding: 1em;
+  }
+
+  @include bp (tablet)  {
+    padding: 1em;
+  }
+
+  @include bp (phone)  {
+    padding: 1em;
+  }
 }
 
 .logo-form {
@@ -27,7 +41,7 @@
   padding-left: 0.5em;
 }
 
-.create-project input {
+.create-project input,textarea {
   font-style: italic;
   color: var(--golden-text);
   border: 2px solid var(--golden-text);

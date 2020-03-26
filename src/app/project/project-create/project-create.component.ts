@@ -14,6 +14,7 @@ import {Router} from '@angular/router';
 export class ProjectCreateComponent implements OnInit {
 
   form: FormGroup;
+  urlRegex = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
 
   constructor( private fb: FormBuilder,
                private projectService: ProjectService,
@@ -21,11 +22,11 @@ export class ProjectCreateComponent implements OnInit {
                private router: Router,
                private toastr: ToastrService) {
     this.form = this.fb.group({
-      title: ['', [Validators.required]],
+      title: ['', [Validators.required, Validators.minLength(4)]],
       author: ['', [Validators.required]],
-      description: ['', [Validators.required]],
+      description: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(1000)]],
       year: ['', [Validators.required]],
-      imageUrl: ['', [Validators.required]],
+      imageUrl: ['', [Validators.required, Validators.pattern(this.urlRegex)]],
       rating: [0],
     });
   }
