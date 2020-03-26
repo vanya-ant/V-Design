@@ -12,6 +12,7 @@ import {AboutComponent} from './about/about.component';
 import {ProjectComponent} from './project/project.component';
 import {ProjectCreateComponent} from './project/project-create/project-create.component';
 import {ForgotPasswordComponent} from './user/forgot-password/forgot-password.component';
+import {PrivacyComponent} from './privacy/privacy.component';
 
 const routes: Routes = [
   {
@@ -72,6 +73,10 @@ const routes: Routes = [
   {
     path: 'forgot-password',
     component: ForgotPasswordComponent
+  },
+  {
+    path: 'privacy',
+    component: PrivacyComponent
   },
   {
     path: '**',

@@ -20,6 +20,7 @@ import { HomeComponent } from './home/home.component';
 import '@angular/compiler';
 import { ToastrModule } from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { PrivacyComponent } from './privacy/privacy.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     HomeComponent,
     NotFoundComponent,
     PasswordsMatchDirective,
+    PrivacyComponent,
   ],
   imports: [
     BrowserModule,

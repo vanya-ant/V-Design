@@ -1,0 +1,18 @@
+.privacy-page {
+  width: 80%;
+  display: block;
+  background: var(--text-primary-color);
+  color: var(--text-headings-color);
+  padding: 0.5em;
+  margin: 0 auto;
+}
+
+.privacy-page h1, h2 {
+  padding: 2em;
+}
+
+.privacy-page > p {
+  text-indent: 1em;
+  padding-bottom: 0.5em;
+  font-style: italic;
+}
