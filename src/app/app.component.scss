@@ -5,8 +5,8 @@ body {
 
 .page-content {
   display: flex;
-  min-width: 100%;
-  min-height: calc(100% - 1.2em);
+  max-width: 100%;
+  min-height: calc(100% - 1.15em);
   justify-content: center;
 }
 

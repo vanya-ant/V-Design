@@ -11,6 +11,7 @@ import {ProjectListComponent} from './project/project-list/project-list.componen
 import {AboutComponent} from './about/about.component';
 import {ProjectComponent} from './project/project.component';
 import {ProjectCreateComponent} from './project/project-create/project-create.component';
+import {ForgotPasswordComponent} from './user/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   {
@@ -67,6 +68,10 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent,
+  },
+  {
+    path: 'forgot-password',
+    component: ForgotPasswordComponent
   },
   {
     path: '**',
