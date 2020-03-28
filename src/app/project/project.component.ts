@@ -17,4 +17,8 @@ export class ProjectComponent implements OnInit {
   constructor(private projectService: ProjectService) {}
 
   ngOnInit() {}
+
+  openImg(imageUrl) {
+   window.open(imageUrl);
+  }
 }
