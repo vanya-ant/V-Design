@@ -62,8 +62,9 @@ const routes: Routes = [
   {
     path: 'project-create',
     component: ProjectCreateComponent,
+    canActivate: [AuthGuard],
     data: {
-      isLogged: false
+      isLogged: true
     }
   },
   {

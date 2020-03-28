@@ -8,7 +8,7 @@ import {
   Router
 } from '@angular/router';
 import { Observable } from 'rxjs';
-import {UserService} from 'kinvey-angular-sdk/lib';
+import {UserService} from 'kinvey-angular-sdk';
 
 @Injectable({
   providedIn: 'root'
@@ -23,10 +23,11 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     const active = this.userService.getActiveUser();
-    if (active) {
+    // @ts-ignore
+    if (active.role === 'Admin' || active.role === 'Designer') {
       return true;
     }
-    this.router.navigate(['/home']);
+    this.router.navigate(['/login']);
     return false;
   }
 }
