@@ -9,6 +9,7 @@ import {
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import {UserService} from 'kinvey-angular-sdk';
+import {ToastrService} from "ngx-toastr";
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,8 @@ import {UserService} from 'kinvey-angular-sdk';
 export class AuthGuard implements CanActivate {
   constructor(
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) { }
   canActivate(
     next: ActivatedRouteSnapshot,
@@ -24,10 +26,11 @@ export class AuthGuard implements CanActivate {
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     const active = this.userService.getActiveUser();
     // @ts-ignore
-    if (active.role === 'Admin' || active.role === 'Designer') {
+    if (active.data.role === 'Admin' || active.data.role === 'Designer') {
       return true;
     }
     this.router.navigate(['/login']);
+    this.toastr.error('Please, sign in with correct credentials!')
     return false;
   }
 }
