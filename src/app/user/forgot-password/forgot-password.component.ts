@@ -30,6 +30,7 @@ export class ForgotPasswordComponent implements OnInit {
       await this.userService.resetPassword(this.forgotPasswordForm.value.username);
       this.toastr.success('Successfully sent reset password email!');
       this.forgotPasswordForm.reset();
+      await this.router.navigate(['login']);
     } catch (error) {
       this.toastr.error('Error');
     }

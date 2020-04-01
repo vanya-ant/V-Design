@@ -59,6 +59,14 @@
   border: 0.2em solid var(--text-primary-color);
   width: 60%;
   height: auto;
+
+  @include bp(mobile){
+     width: 80%;
+    }
+
+  @include bp(phone){
+    width: 80%;
+  }
 }
 
 .contact-form {

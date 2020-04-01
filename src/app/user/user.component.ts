@@ -52,15 +52,6 @@ export class UserComponent {
     }
   }
 
-  async resetPassword(username: string) {
-    try {
-      const response = await this.userService.resetPassword(username);
-      console.log(response);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
   async exists(username: string) {
     try {
       const doesExist = await this.userService.exists(username);

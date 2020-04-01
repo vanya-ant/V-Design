@@ -36,6 +36,7 @@ input.register-form.touched {
 
 .register-form button {
   margin: 2em auto;
+  text-shadow: 0 0 0.2em var(--text-headings-color);
 }
 
 div .form-field:last-child {
@@ -93,12 +94,4 @@ input.register-form.touched {
   opacity: 0.7;
 }
 
-.checkbox-password-remember {
-  display: flex;
-
-  @include bp (phone) {
-    display: block;
-    width: 60%;
-  }
-}
 

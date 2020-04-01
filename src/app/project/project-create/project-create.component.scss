@@ -43,14 +43,16 @@
 
 .create-project input,textarea {
   font-style: italic;
-  color: var(--golden-text);
+  color: var(--text-headings-color);
   border: 2px solid var(--golden-text);
   padding: 0.2em;
   background-color:white;
 }
 
+
 button {
   margin: 2em auto;
+  text-shadow: 0 0 0.2em var(--text-headings-color);
 }
 
 div.form-field:last-child {

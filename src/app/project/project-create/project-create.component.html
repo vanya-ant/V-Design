@@ -10,7 +10,7 @@
       <p class="error-message" *ngIf="form.get('title').invalid && form.get('title').touched">Please enter valid title!</p>
       <div class="form-field">
         <label class="description" for="create-description"><span class="hidden">Project description</span></label>
-        <textarea id="create-description" formControlName="description" placeholder="Description"></textarea>
+        <textarea rows="4" cols="18" id="create-description" formControlName="description" placeholder="Description"></textarea>
       </div>
       <p class="error-message" *ngIf="form.get('description').invalid && form.get('description').touched">Please enter valid description!</p>
       <div class="form-field">
@@ -22,11 +22,11 @@
         <input id="image-Url" placeholder="Project image url" formControlName="imageUrl">
       </div>
       <p class="error-message" *ngIf="form.get('imageUrl').invalid && form.get('imageUrl').touched">Please enter valid imageUrl!</p>
-      <button class="button">
-        Create
-        <div class="button__horizontal"></div>
-        <div class="button__vertical"></div>
-      </button>
+        <button class="button">
+          Create
+          <div class="button__horizontal"></div>
+          <div class="button__vertical"></div>
+        </button>
     </form>
   </div>
 </div>
