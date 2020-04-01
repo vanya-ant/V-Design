@@ -4,8 +4,8 @@
   <div class="register-form">
     <form [formGroup]="registerForm" (ngSubmit)="register()">
       <div class="form-field">
-        <label class="user" for="login-username"><span class="hidden">Username</span></label>
-        <input formControlName="username" id="login-username" type="text" class="form-input" placeholder="Username" required>
+        <label class="user" for="register-username"><span class="hidden">Username</span></label>
+        <input formControlName="username" id="register-username" type="text" class="form-input" placeholder="Username" required>
       </div>
       <p class="error-message" *ngIf="registerForm.get('username').invalid && registerForm.get('username').touched">Please enter valid email!</p>
 
