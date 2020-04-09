@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ToastrService} from 'ngx-toastr';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {IProject} from '../../shared/project';
-import {ProjectService} from '../project.service';
+import {ProjectService} from '../../shared/services/project.service';
 import {UserService} from 'kinvey-angular-sdk';
 import {Router} from '@angular/router';
 

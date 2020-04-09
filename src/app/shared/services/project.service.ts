@@ -1,9 +1,8 @@
 import {Injectable, InjectionToken} from '@angular/core';
-import { IProject } from '../shared/project';
+import { IProject } from '../project';
 import { DataStoreService } from 'kinvey-angular-sdk';
 import { DataStoreType } from 'kinvey-angular-sdk';
 import {UserService} from 'kinvey-angular-sdk';
-import {createUrlResolverWithoutPackagePrefix} from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ProjectCalculatorComponent } from './project-calculator.component';
 import {FormsModule} from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
-import {ProjectCalculatorService} from './project-calculator.service';
+import {ProjectCalculatorService} from '../shared/services/project-calculator.service';
 
 
 @NgModule({

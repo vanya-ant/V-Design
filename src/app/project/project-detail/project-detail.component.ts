@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IProject} from '../../shared/project';
-import {ProjectService} from '../project.service';
+import {ProjectService} from '../../shared/services/project.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {UserService} from 'kinvey-angular-sdk';
 import {ToastrService} from 'ngx-toastr';

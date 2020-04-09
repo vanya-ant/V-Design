@@ -53,6 +53,10 @@
     & .page-link {
       border-bottom: 0.05em solid var(--golden-text);
     }
+
+    & .site-nav-login-register a:last-child {
+      padding-left: 0;
+    }
   }
 
   @include bp (phone)  {

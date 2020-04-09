@@ -21,6 +21,9 @@
         <label class="year" for="image-Url"><span class="hidden">Project image</span></label>
         <input id="image-Url" placeholder="Project image url" formControlName="imageUrl">
       </div>
+<!--      <div class="form-field">
+        <input formControlName="file" type="file" class="ng-file-upload" placeholder="Upload image"/>
+      </div>-->
       <p class="error-message" *ngIf="form.get('imageUrl').invalid && form.get('imageUrl').touched">Please enter valid imageUrl!</p>
         <button class="button">
           Create
