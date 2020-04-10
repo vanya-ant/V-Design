@@ -9,6 +9,10 @@
   color: var(--text-headings-color);
 }
 
+.project-detail:hover {
+  cursor: pointer;
+}
+
 .project-detail img{
   width: 100%;
   height: auto;
@@ -42,6 +46,7 @@
 .rating-list li:hover,
 .rating-list li:hover ~ li, .rating-list li.selected {
   color: var(--golden-text);
+  cursor: pointer;
 }
 
 .rating-list {
@@ -57,3 +62,6 @@
   justify-self: right;
 }
 
+.delete-button a:hover {
+  cursor: pointer;
+}

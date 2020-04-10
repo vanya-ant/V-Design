@@ -2,7 +2,8 @@ import {Injectable, InjectionToken} from '@angular/core';
 import { IProject } from '../project';
 import { DataStoreService } from 'kinvey-angular-sdk';
 import { DataStoreType } from 'kinvey-angular-sdk';
-import {UserService} from 'kinvey-angular-sdk';
+import { UserService } from 'kinvey-angular-sdk';
+import { FilesService } from 'kinvey-angular-sdk';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,9 @@ export class ProjectService {
   project: IProject;
   private dataStore: any;
 
-  constructor(private dataStoreService: DataStoreService, private userService: UserService) {
+  constructor(private dataStoreService: DataStoreService,
+              private userService: UserService,
+              private fileService: FilesService) {
     this.dataStore = this.dataStoreService.collection('projects', DataStoreType.Network);
     this.getAllProjects();
   }
@@ -29,9 +32,10 @@ export class ProjectService {
   }
 
   async create(project: IProject) {
-    await this.dataStore.save(project);
+    const createdProject = await this.dataStore.save(project);
     this.projects = [];
     this.getAllProjects();
+    return createdProject;
   }
 
   async delete(id: string) {
@@ -53,5 +57,19 @@ export class ProjectService {
       Math.round(currentProject.rating);
 
       this.dataStore.update(currentProject);
+  }
+
+  async uploadFile(file: any, id: string) {
+   try {
+     const metadata = {
+       mimeType: 'image/jpeg',
+       size: file.length,
+       _public: true,
+       projectId: id,
+     };
+     await this.fileService.upload(file, metadata);
+   } catch (e) {
+     console.log(e);
+   }
   }
 }

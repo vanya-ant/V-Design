@@ -28,6 +28,7 @@ export class ProjectCreateComponent implements OnInit {
       year: ['', [Validators.required]],
       imageUrl: ['', [Validators.required, Validators.pattern(this.urlRegex)]],
       rating: [0],
+      file: ['']
     });
   }
 
@@ -46,7 +47,10 @@ export class ProjectCreateComponent implements OnInit {
     project.imageUrl = this.form.value.imageUrl;
     project.rating = 0;
 
-    await this.projectService.create(project);
+    const createdProject = await this.projectService.create(project);
+
+ /*   const uploadedFile = await this.projectService.uploadFile(this.form.value.file, createdProject._id);*/
+
     await this.router.navigate(['projects-portfolio']);
     this.toastr.success('Successfully created project');
   }

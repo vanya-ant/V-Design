@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 export class NavigationComponent implements OnInit {
 
   get isLogged() { return !!this.userService.getActiveUser(); }
+  get username() { return this.userService.getActiveUser().username; }
 
   get isAdmin() {
     if (this.isLogged) {

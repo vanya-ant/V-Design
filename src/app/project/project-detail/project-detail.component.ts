@@ -40,16 +40,23 @@ export class ProjectDetailComponent implements OnInit {
     });
   }
 
-  countStar(star) {
+  async countStar(star) {
     this.selectedValue = star;
-    console.log('Value of star', star);
-    this.projectService.rate(star, this.project._id);
-    this.toastr.success(`Successfully rated project with ${star} stars!`);
+    try {
+      await this.projectService.rate(star, this.project._id);
+      this.toastr.success(`Successfully rated project with ${star} stars!`);
+    } catch (error) {
+      this.toastr.error('Error');
+    }
   }
 
   async delete(id: string) {
-    await this.projectService.delete(id);
-    await this.router.navigate(['projects-portfolio']);
-    this.toastr.success('Successfully deleted project');
+    try {
+      await this.projectService.delete(id);
+      await this.router.navigate(['projects-portfolio']);
+      this.toastr.success('Successfully deleted project');
+    } catch (error) {
+      this.toastr.error('Error');
+    }
   }
 }
