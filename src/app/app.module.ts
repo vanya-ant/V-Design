@@ -12,8 +12,6 @@ import { KinveyModule } from 'kinvey-angular-sdk';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PasswordsMatchDirective } from './shared/passwords-match.directive';
 import { HttpClientModule } from '@angular/common/http';
-import { CloudinaryModule } from '@cloudinary/angular-5.x';
-import * as  Cloudinary from 'cloudinary-core';
 
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AppComponent } from './app.component';
@@ -43,12 +41,6 @@ import { PrivacyComponent } from './privacy/privacy.component';
     ContactsModule,
     AppRoutingModule,
     RouterModule,
-/*    CloudinaryModule,
-    CloudinaryModule.forRoot(Cloudinary, {
-      cloud_name: 'interiordesign-bg',
-      api_key: '599915264666458',
-      api_secret: 'ZhkcxKYC_Vhnf4pmhGdHQd9hxSM'
-    }),*/
     KinveyModule.init({
         appKey: 'kid_SkcXBlwQ8',
         appSecret: '0bfab2722e3548dca29aad19cd11f4aa',

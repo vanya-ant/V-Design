@@ -28,7 +28,7 @@ export class ProjectCreateComponent implements OnInit {
       year: ['', [Validators.required]],
       imageUrl: ['', [Validators.required, Validators.pattern(this.urlRegex)]],
       rating: [0],
-      file: ['']
+/*      file: ['']*/
     });
   }
 
