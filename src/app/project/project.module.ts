@@ -7,7 +7,6 @@ import { ProjectListComponent } from './project-list/project-list.component';
 import { ProjectCreateComponent } from './project-create/project-create.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RatingModule } from 'ng-starrating';
-import {AppRoutingModule} from '../app-routing.module';
 
 
 
@@ -17,7 +16,6 @@ import {AppRoutingModule} from '../app-routing.module';
     CommonModule,
     ReactiveFormsModule,
     RatingModule,
-    AppRoutingModule,
   ],
   exports: [
     ProjectComponent,
