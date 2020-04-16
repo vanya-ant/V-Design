@@ -1,7 +1,5 @@
 import {RouterModule, Routes} from '@angular/router';
 import {ProjectDetailComponent} from '../project-detail/project-detail.component';
-import {ProjectCreateComponent} from '../project-create/project-create.component';
-import {AuthGuard} from '../../auth.guard';
 import {ProjectListComponent} from '../project-list/project-list.component';
 
 const routes: Routes = [
@@ -16,6 +14,7 @@ const routes: Routes = [
       {
         path: ':id',
         component: ProjectDetailComponent,
+        loadChildren: () => import('../project.module').then(m => m.ProjectModule),
         data: {
           isLogged: false
         }

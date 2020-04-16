@@ -23,6 +23,7 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+    loadChildren: () => import('./user/user.module').then(m => m.UserModule),
     data: {
       isLogged: false
     }
@@ -30,10 +31,12 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
+    loadChildren: () => import('./user/user.module').then(m => m.UserModule),
   },
   {
     path: 'contacts',
     component: ContactsComponent,
+    loadChildren: () => import('./contacts/contacts.module').then(m => m.ContactsModule),
     data: {
       isLogged: false
     },
@@ -41,6 +44,7 @@ const routes: Routes = [
   {
     path: 'project-calculator',
     component: ProjectCalculatorComponent,
+    loadChildren: () => import('./project-calculator/project-calculator.module').then(m => m.ProjectCalculatorModule),
     data: {
       isLogged: false
     }
@@ -48,6 +52,7 @@ const routes: Routes = [
   {
     path: 'projects-portfolio',
     component: ProjectListComponent,
+    loadChildren: () => import('./project/project.module').then(m => m.ProjectModule),
     data: {
       isLogged: false
     }
@@ -55,6 +60,7 @@ const routes: Routes = [
   {
     path: 'portfolio',
     component: ProjectComponent,
+    loadChildren: () => import('./project/project.module').then(m => m.ProjectModule),
     data: {
       isLogged: false
     }
@@ -62,6 +68,7 @@ const routes: Routes = [
   {
     path: 'project-create',
     component: ProjectCreateComponent,
+    loadChildren: () => import('./project/project.module').then(m => m.ProjectModule),
     canActivate: [AuthGuard],
     data: {
       isLogged: true

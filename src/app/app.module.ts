@@ -1,10 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { UserModule } from './user/user.module';
-import { ProjectModule } from './project/project.module';
-import { ContactsModule } from './contacts/contacts.module';
-import { ProjectCalculatorModule } from './project-calculator/project-calculator.module';
 import { CoreModule } from './core/core.module';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,7 +15,7 @@ import { HomeComponent } from './home/home.component';
 
 import '@angular/compiler';
 import { ToastrModule } from 'ngx-toastr';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PrivacyComponent } from './privacy/privacy.component';
 
 @NgModule({
@@ -33,12 +29,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    UserModule,
-    ProjectModule,
-    ContactsModule,
-    ProjectCalculatorModule,
     CoreModule,
-    ContactsModule,
     AppRoutingModule,
     RouterModule,
     KinveyModule.init({

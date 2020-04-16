@@ -59,11 +59,12 @@ export class ProjectService {
       this.dataStore.update(currentProject);
   }
 
-  async uploadFile(file: any, id: string) {
+  async uploadFile(file: File, id: string) {
    try {
      const metadata = {
-       mimeType: 'image/jpeg',
-       size: file.length,
+       _filename: file.name,
+       mimeType: file.type,
+       size: file.size,
        _public: true,
        projectId: id,
      };

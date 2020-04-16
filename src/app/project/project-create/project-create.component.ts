@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {ToastrService} from 'ngx-toastr';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import {IProject} from '../../shared/project';
-import {ProjectService} from '../../shared/services/project.service';
-import {UserService} from 'kinvey-angular-sdk';
-import {Router} from '@angular/router';
+import { IProject} from '../../shared/project';
+import { ProjectService } from '../../shared/services/project.service';
+import { UserService } from 'kinvey-angular-sdk';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-project-create',
@@ -15,6 +15,7 @@ export class ProjectCreateComponent implements OnInit {
 
   form: FormGroup;
   urlRegex = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
+  public pictures = [];
 
   constructor( private fb: FormBuilder,
                private projectService: ProjectService,
@@ -28,7 +29,7 @@ export class ProjectCreateComponent implements OnInit {
       year: ['', [Validators.required]],
       imageUrl: ['', [Validators.required, Validators.pattern(this.urlRegex)]],
       rating: [0],
-/*      file: ['']*/
+      file: ['']
     });
   }
 
@@ -48,10 +49,13 @@ export class ProjectCreateComponent implements OnInit {
     project.rating = 0;
 
     const createdProject = await this.projectService.create(project);
-
- /*   const uploadedFile = await this.projectService.uploadFile(this.form.value.file, createdProject._id);*/
+    const uploadedFile = await this.projectService.uploadFile(this.pictures[0], createdProject._id);
 
     await this.router.navigate(['projects-portfolio']);
     this.toastr.success('Successfully created project');
+  }
+
+  onUploadFinished(event) {
+    this.pictures.push(event.file);
   }
 }
