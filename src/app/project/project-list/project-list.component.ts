@@ -1,7 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {ProjectService} from '../../shared/services/project.service';
 import {IProject} from '../../shared/project';
-import {StarRatingComponent} from 'ng-starrating';
 
 @Component({
   selector: 'app-project-list',
