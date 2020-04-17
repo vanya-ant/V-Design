@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 export class ProjectCreateComponent implements OnInit {
 
   form: FormGroup;
-  urlRegex = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
+  urlRegex = '(https?://)?([a-z0-9/.-?-A-Z/&]+)';
   public pictures = [];
 
   constructor( private fb: FormBuilder,
