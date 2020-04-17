@@ -61,6 +61,7 @@ const routes: Routes = [
       {
         path: ':id',
         component: ProjectDetailComponent,
+        loadChildren: () => import('./project/project.module').then(m => m.ProjectModule),
         data: {
           isLogged: false
         }

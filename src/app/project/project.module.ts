@@ -7,8 +7,7 @@ import { ProjectListComponent } from './project-list/project-list.component';
 import { ProjectCreateComponent } from './project-create/project-create.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RatingModule } from 'ng-starrating';
-
-
+import { RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [ProjectComponent, ProjectDetailComponent, ProjectListComponent, ProjectCreateComponent],
@@ -16,6 +15,7 @@ import { RatingModule } from 'ng-starrating';
     CommonModule,
     ReactiveFormsModule,
     RatingModule,
+    RouterModule,
   ],
   exports: [
     ProjectComponent,
